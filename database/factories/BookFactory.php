@@ -17,13 +17,13 @@ class BookFactory extends Factory
     public function definition(): array
     {
         return [
-           'title'=> fake()->sentence,
-           'category'=> fake()->word,
-           'isbn'=> fake()->isbn13,
-           'description'=> fake()->paragraph,
-           'book_image'=> fake()->imageUrl,
-           'created_at'=> now(),
-           'updated_at'=> now(),
+           'title' => fake()->sentence,
+           'category' => fake()->word,
+           'isbn' => fake()->isbn13,
+           'description' => fake()->paragraph,
+           'book_image' => fake()->imageUrl,
+           'created_at' => now(),
+           'updated_at' => now(),
         ];
     }
 }
