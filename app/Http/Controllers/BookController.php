@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App/Models/Book;
+use App\Models\Book;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -16,33 +16,32 @@ class BookController extends Controller
         return view('books.index',compact('books'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    public function show($id) 
+    {
+    $book = Book::find($id);
+    return view ('books.show')->with('book',$book);
+
+    }
+
     public function create()
     {
-        //
+        return view('books.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(Request $request)
     {
-        //
-    }
+    // $book = new Book();
+    // $book->title = $request->input('title');
+    // $book->description = $request->input('description');
+    // $book->category = $request->input('category');
+    // $book->save();
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
+    // return view()->route('books.show', ['id' => $book->$id]);
     }
+   
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+
     public function edit(string $id)
     {
         //

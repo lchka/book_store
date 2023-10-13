@@ -1,10 +1,10 @@
 
-
-@extends('views.app')
+@extends('layouts.app')
 
 @section('content')
 
 <div class="container">
+    
     <h1>All Books</h1>
     <table class="table">
         <thead>
@@ -17,7 +17,7 @@
         <tbody>
             @foreach ($books as $book)
             <tr>
-                <td>{{$book->title}} </td>
+                <td> <a href="{{ route('books.show', $book) }}"> {{ $book->title }} </a></td>
                 <td>{{$book->description}} </td>
                 <td>@if ($book->book_image)
                         <img src="{{ $book->book_image }}"
